@@ -11,14 +11,14 @@ desired_playlist_id = ''
 all_song_ids = []
 
 #Retreive the playlist id from api based on name in config.py
-def getPlaylistId():
+def get_playlist_id():
     all_playlists = api.get_all_playlists(False, None)
     for playlist in all_playlists:
         if (playlist['name'] == output_playlist):
             return playlist['id']
 
 #Retreive artist ids from api based on list in config.py
-def getArtistIds():
+def get_artist_ids():
     ids = {}
     for artist in artists_list:
         query_results = api.search(artist,1)
@@ -27,7 +27,7 @@ def getArtistIds():
     return ids
 
 #gathers the ids of top tracks from each artist. amount_of_tracks in config.py for #
-def getTopTracks():
+def get_top_tracks():
     song_ids = []
     for artist in artist_id_dict:
         query_results = api.get_artist_info(artist_id_dict[artist],False,amount_of_tracks,0)
@@ -42,13 +42,13 @@ def getTopTracks():
     return song_ids
 
 if (logged_in):
-    desired_playlist_id = getPlaylistId()
+    desired_playlist_id = get_playlist_id()
     print('done locating playlist')
 
-    artist_id_dict = getArtistIds()
+    artist_id_dict = get_artist_ids()
     print('done gathering artists')
 
-    all_song_ids = getTopTracks()
+    all_song_ids = get_top_tracks()
     print('done finding top tracks')
 
     api.add_songs_to_playlist(desired_playlist_id, all_song_ids)

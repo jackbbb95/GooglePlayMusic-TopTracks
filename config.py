@@ -1,5 +1,5 @@
-gpm_username = ###############
-gpm_password = ###############
+gpm_username = 'jackbbb95@gmail.com'
+gpm_password = 'AsianThoughtBound2'
 
 
 
@@ -45,8 +45,8 @@ gpm_password = ###############
 
 
 
-output_playlist = 'Hangout Fest'
-amount_of_tracks = 5
+output_playlist = 'Hangout Fest DUMP'
+amount_of_tracks = 15
 artists_list = [ #Hangout Fest 2017
 'Mumford & Sons',
 'Twenty One Pilots',
