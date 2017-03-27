@@ -1,5 +1,5 @@
-gpm_username = 'jackbbb95@gmail.com'
-gpm_password = 'AsianThoughtBound2'
+gpm_username = '########'
+gpm_password = '########'
 
 
 
