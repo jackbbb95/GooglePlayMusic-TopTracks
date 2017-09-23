@@ -15,5 +15,8 @@ for song in api.get_all_songs():
 
 artist_names.sort()
 
+file = open("artist.txt","w")
 for artist in artist_names:
     print(artist)
+    file.write(artist + "\n")
+file.close()
