@@ -1,23 +1,23 @@
 from gmusicapi import Mobileclient
 from config import *
 
-#API
+# API
 api = Mobileclient()
 logged_in = api.login(gpm_username, gpm_password, '1234567890abcdef')
 
-#Data
+# Data
 artist_id_dict = {}
 desired_playlist_id = ''
 all_song_ids = []
 
-#Retreive the playlist id from api based on name in config.py
+# Retreive the playlist id from api based on name in config.py
 def get_playlist_id():
     all_playlists = api.get_all_playlists(False, None)
     for playlist in all_playlists:
         if (playlist['name'] == output_playlist):
             return playlist['id']
 
-#Retreive artist ids from api based on list in config.py
+# Retreive artist ids from api based on list in config.py
 def get_artist_ids():
     ids = {}
     for artist in artists_list:
@@ -26,7 +26,7 @@ def get_artist_ids():
         ids[artist] = artist_id
     return ids
 
-#gathers the ids of top tracks from each artist. amount_of_tracks in config.py for #
+# gathers the ids of top tracks from each artist. amount_of_tracks in config.py for #
 def get_top_tracks():
     song_ids = []
     for artist in artist_id_dict:
